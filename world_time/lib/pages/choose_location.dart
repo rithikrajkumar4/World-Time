@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
 
+// ignore: camel_case_types
 class Choose_Location extends StatefulWidget {
   @override
   _Choose_LocationState createState() => _Choose_LocationState();
 }
 
+// ignore: camel_case_types
 class _Choose_LocationState extends State<Choose_Location> {
 
   List<WorldTime> locations = [

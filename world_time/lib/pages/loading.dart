@@ -2,30 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
+// ignore: camel_case_types
 class loading extends StatefulWidget {
   @override
   _loadingState createState() => _loadingState();
 }
 
+// ignore: camel_case_types
 class _loadingState extends State<loading> {
-
 //  String time = 'loading';
 
-  void setWorldtime() async{
-    WorldTime instance = WorldTime(url:'Asia/Kolkata',location: 'Kolkata',Flag: 'india.png');
+  void setWorldtime() async {
+    WorldTime instance =
+        WorldTime(url: 'Asia/Kolkata', location: 'Kolkata', Flag: 'india.png');
     await instance.getTime();
-    Navigator.pushReplacementNamed(context, '/home',arguments:{
-      'location':instance.location,
-      'flag' : instance.Flag,
-      'time':instance.Time,
-      'isDay':instance.isDay,
-    } );
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': instance.location,
+      'flag': instance.Flag,
+      'time': instance.Time,
+      'isDay': instance.isDay,
+    });
 //    setState(() {
 //      time = instance.Time;
 //    });
   }
 
-   @override
+  @override
   void initState() {
     super.initState();
     setWorldtime();
@@ -41,7 +43,6 @@ class _loadingState extends State<loading> {
           size: 80.0,
         ),
       ),
-      );
-
+    );
   }
 }
